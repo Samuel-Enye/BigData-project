@@ -56,7 +56,7 @@ def pretreat():
 
     return lines,cityMap,experienceMap,educationMap,positionMap
 def LabelPoint(lines,cityMap,experienceMap,educationMap,positionMap):
-    labelpointRDD = lines.map(lambda line:LabeledPoint(line[4], one_hot(line, positionMap,cityMap, experienceMap,educationMap)))
+    labelpointRDD = lines.map(lambda line:LabeledPoint(line[4], one_hot(line, positionMap,cityMap, experienceMap,educationMap)))## 参1.每行第五列,参2.每行特征向量
     return labelpointRDD
 def ModelAccuracy(model, testData):
     ## 计算模型的准确率
