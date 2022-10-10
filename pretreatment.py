@@ -20,6 +20,7 @@ def fenlei(x):
         elif x.find('leader')!=-1 or x.find("总监")!=-1:
             return '主管'
     return '其他'
+#如果在job_infomation中发现对应关键字则直接替换成position中的职位
 df1["职位"]=df['职位'].apply(fenlei)
 
 df1["城市"]=df["城市"]
